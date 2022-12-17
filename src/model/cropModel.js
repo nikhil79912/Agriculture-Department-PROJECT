@@ -16,6 +16,11 @@ const cropSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    region :{
+        type: String,
+        enum: ['East' , 'West' , 'North' , 'South'],
+        required : true
+    }
 
 
 

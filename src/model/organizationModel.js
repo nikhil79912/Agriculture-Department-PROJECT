@@ -16,20 +16,7 @@ const organizationSchema = new mongoose.Schema({
         unique: true,
     },
 
-    property: {
-        region: {
-            type: String,
-            enum: ['East' , 'West' , 'North' , 'South'],
-            field: {
-                size : {
-                    type : Number ,
-                    default : sqft ,
-                    required : true
-                }
-            }
-        },
-
-    }
+    
 
 
 }, { timestamps: true })
