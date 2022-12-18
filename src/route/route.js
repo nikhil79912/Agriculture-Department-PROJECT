@@ -13,6 +13,10 @@ route.post("/organizationLogin",organizationController. organizationLogin)
 
 route.post("/createRegion/:organizationId", RegionController.createRegion )
 
+route.put("/updateRegion/:organizationId", RegionController.updateRegion)
+
+route.get("/getDetails" , RegionController.getOrganization)
+
 module.exports = route;
 
 

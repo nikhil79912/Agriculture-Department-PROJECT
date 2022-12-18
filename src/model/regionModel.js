@@ -13,7 +13,6 @@ const regionSchema = new mongoose.Schema({
         }
 
     },
-
     cropId: {
         type: ObjectId,
         ref: 'crop'
@@ -22,8 +21,6 @@ const regionSchema = new mongoose.Schema({
         type: ObjectId,
         ref: 'organization'
     },
-
-
 
 }, { timestamps: true })
 
