@@ -8,7 +8,7 @@ const regionSchema = new mongoose.Schema({
             enum: ['East', 'West', 'North', 'South'],
         },
         fieldSize: {
-            type: Number
+            type: String
             // required: true
         }
 
@@ -21,6 +21,11 @@ const regionSchema = new mongoose.Schema({
         type: ObjectId,
         ref: 'organization'
     },
+
+    isDeleted:{
+        type:Boolean,
+        default: false
+    }
 
 }, { timestamps: true })
 

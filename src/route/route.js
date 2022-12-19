@@ -7,15 +7,17 @@ const RegionController = require('../controller/regionController')
 
 route.post("/createCrop",cropController.createCrop)
 
-route.post("/createOrganization",organizationController.createOrganization )
+route.post("/createOrganization",organizationController.createOrganization)
 
 route.post("/organizationLogin",organizationController. organizationLogin)
 
-route.post("/createRegion/:organizationId", RegionController.createRegion )
+route.post("/createRegion/:organizationId",middleware.Authenticate, RegionController.createRegion )
 
-route.put("/updateRegion/:organizationId", RegionController.updateRegion)
+route.get("/getDetails" , middleware.Authenticate,RegionController.getOrganization)
 
-route.get("/getDetails" , RegionController.getOrganization)
+route.put("/updateRegion/:organizationId", middleware.Authenticate,middleware.Authorization,RegionController.updateRegion)
+
+route.delete("/deleteRegion/:organizationId",middleware.Authenticate,middleware.Authorization ,RegionController.deleteRegion)
 
 module.exports = route;
 
