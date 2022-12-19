@@ -72,7 +72,7 @@ const createOrganization = async (req, res) => {
   }
 };
 
-// =================login=========================
+// =================login===============================================================================
 
 
 const organizationLogin = async (req, res) => {

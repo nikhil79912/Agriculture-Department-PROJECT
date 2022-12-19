@@ -4,12 +4,12 @@ const regionModel = require("../model/regionModel");
 const organizationModel = require("../model/organizationModel");
 const { isValidObjectId } = require("../validation/validation");
 
-//=====================create-update================
+//=====================create Region=================================================================
 
 const createRegion = async function (req, res) {
   try {
     let data = req.body;
-    // console.log(data)
+    
     let organizationId = req.params.organizationId;
     if (!organizationId)
       return res.status(400).send({
@@ -75,7 +75,7 @@ const createRegion = async function (req, res) {
   }
 };
 
-//=====================update-region===============
+//=====================update-region======================================================================
 
 const updateRegion = async function (req, res) {
   try {
@@ -136,7 +136,7 @@ const updateRegion = async function (req, res) {
   }
 };
 
-//======================get-data==============
+//======================get-data=================================================================================
 const getOrganization = async (req, res) => {
   try {
     let queryDetail = req.query;
@@ -192,7 +192,7 @@ const getOrganization = async (req, res) => {
     return res.status(500).send({ status: false, msg: error.message });
   }
 };
-//================delete-Region==========
+//================delete-Region=========================================================================================
 let deleteRegion = async function (req, res) {
   try {
     let regionId = req.body.regionId;

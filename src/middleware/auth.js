@@ -44,8 +44,7 @@ const Authorization = async function (req, res, next) {
             return res.status(400).send({ status: false, message: "already deleted" })
         }
 
-        // console.log(req.token.teacherId)
-        // console.log(checkUserId.teacherId)
+        
         if (req.token.organizationId != checkUserId.organizationId) return res.status(403).send({ status: false, message: "Unauthorize Access....." });
         next()
     } catch (error) {

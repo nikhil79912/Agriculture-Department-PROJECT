@@ -1,6 +1,8 @@
 const cropModel = require("../model/cropModel");
 const {isValid } = require("../validation/validation")
 
+// ==============================Create Crop ============================================================
+
 const createCrop = async function (req, res) {
     try{
         const data = req.body;
@@ -39,46 +41,6 @@ const createCrop = async function (req, res) {
         if (!['alluvial' , 'black' , 'red' , 'laterite' ,'arid'].includes(theCrop.soiltype)) {
             return res.status(400).send({ status: false, Message: "Soil Type must be from {alluvial , black , red , laterite ,arid}" })
         }
-
-
-        // let array = region.split(",").map(x => x.trim())
-
-        // for (let i = 0; i < array.length; i++) {
-        //     if (!(['East' , 'West' , 'North' , 'South'].includes(array[i]))) {
-        //         return res.status(400).send({ status: false, message: `region must be among ${['East' , 'West' , 'North' , 'South']}` })         
-        //     }
-        // }
-        // if (Array.isArray(array)) {
-        //     theCrop['region'] = array
-        // }
-
-
-
-        // let orray = soiltype.split(",").map(x => x.trim())
-
-        // for (let i = 0; i < array.length; i++) {
-        //     if (!(['alluvial' , 'black' , 'red' , 'laterite' ,'arid'].includes(array[i]))) {
-        //         return res.status(400).send({ status: false, message: `soiltype must be among ${['alluvial' , 'black' , 'red' , 'laterite' ,'arid']}` })         
-        //     }
-        // }
-        // if (Array.isArray(orray)) {
-        //     theCrop['soiltype'] = orray
-        // }
-
-
-
-        // let nrray = soiltype.split(",").map(x => x.trim())
-
-        // for (let i = 0; i < array.length; i++) {
-        //     if (!(['Kharif','Rabi','Zaid'].includes(array[i]))) {
-        //         return res.status(400).send({ status: false, message: `soiltype must be among ${['Kharif','Rabi','Zaid']}` })         
-        //     }
-        // }
-        // if (Array.isArray(nrray)) {
-        //     theCrop['season'] = nrray
-        // }
-
-
 
         const savedata = await cropModel.create(theCrop)
         return res.status(201).send({ status: true, message: "crop created successfully", data: savedata })
