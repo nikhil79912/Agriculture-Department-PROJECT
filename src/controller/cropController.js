@@ -34,6 +34,10 @@ const createCrop = async function (req, res) {
             region
         }
 
+        if (!['Spring', 'Summer', 'Monsoon', 'Autumn','Winter'].includes(theCrop.season)) {
+            return res.status(400).send({ status: false, Message: "Region must be from {Spring, Summer, Monsoon, Autumn, Winter}" })
+        }
+
         if (!['East', 'West', 'North', 'South'].includes(theCrop.region)) {
             return res.status(400).send({ status: false, Message: "Region must be from {North, South, East, West}" })
         }
