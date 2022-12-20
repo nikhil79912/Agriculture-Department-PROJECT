@@ -175,6 +175,10 @@ const getOrganization = async (req, res) => {
         let e = await cropModel.find({"soiltype": soiltype , "cropName":cropName});
       return res.status(200).send({status: true,data :e});
     }
+    if(soiltype&&season){
+        let e = await cropModel.find({"soiltype": soiltype , "season":season});
+      return res.status(200).send({status: true,data :e});
+    }
 
     if(season){
         let fieldSi = await cropModel.find({"season": season});

@@ -4,7 +4,6 @@ const cropSchema = new mongoose.Schema({
 
     soiltype: {
         type: String,
-        // enum :['alluvial' , 'black' , 'red' , 'laterite' ,'arid'],
         required: true
     },
     season: {
@@ -18,7 +17,6 @@ const cropSchema = new mongoose.Schema({
     },
     region :{
         type: String,
-        // enum: ['East' , 'West' , 'North' , 'South'],
         required : true
     }
 

@@ -5,7 +5,7 @@ const isValidName = (name) => {
 }
 
 const isValidPassword = (password) => {
-    if (/^.(?=.{6,})(?=.[a-zA-Z])(?=.\d)(?=.[!&$%&? "]).*$/.test(password)) return true
+    if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-zA-Z0-9!@#$%^&*]).{8,15}$/.test(password)) return true
     return false
 }
 
